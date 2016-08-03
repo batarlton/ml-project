@@ -18,7 +18,7 @@ library("syuzhet")
 
 setup_twitter_oauth("zxYRrt8ehfhkzObPHaS0ogvPH", "2NlLd6164qb5Dr7594HqTp8jGthfrRY0A4bU0uJAXcrQe8zbQu", "752704258428968960-ekoMIp6sj0Sg2AQL6zGJObVWCxqzHKy", "8fBFRwtatrp3a4axwOLYDoITI3kFjX7TbzpMXKWLTxtfq")
 tweetsAAPL <- searchTwitter("#AAPL", n=526, lang = "en")
-tweetsAAPL <- strip_retweets(tweets, strip_manual = TRUE, strip_mt = TRUE)
+tweetsAAPL <- strip_retweets(tweetsAAPL, strip_manual = TRUE, strip_mt = TRUE)
 
 #https://www.credera.com/blog/business-intelligence/twitter-analytics-using-r-part-2-create-word-cloud/
 #  Above website showed how to obtain tweets and remove unnecessary words/symbols

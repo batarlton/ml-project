@@ -17,7 +17,8 @@ library("wordcloud")
 library("syuzhet")
 
 setup_twitter_oauth("zxYRrt8ehfhkzObPHaS0ogvPH", "2NlLd6164qb5Dr7594HqTp8jGthfrRY0A4bU0uJAXcrQe8zbQu", "752704258428968960-ekoMIp6sj0Sg2AQL6zGJObVWCxqzHKy", "8fBFRwtatrp3a4axwOLYDoITI3kFjX7TbzpMXKWLTxtfq")
-tweetsAAPL <- searchTwitter("#AAPL", n=100, lang = "en")
+tweetsAAPL <- searchTwitter("#AAPL", n=526, lang = "en")
+tweetsAAPL <- strip_retweets(tweets, strip_manual = TRUE, strip_mt = TRUE)
 
 #https://www.credera.com/blog/business-intelligence/twitter-analytics-using-r-part-2-create-word-cloud/
 #  Above website showed how to obtain tweets and remove unnecessary words/symbols
@@ -51,6 +52,6 @@ tweetsAAPL.text.corpus <- tm_map(tweetsAAPL.text.corpus, function(x)removeWords(
 
 
 # get sentiment of the tweets
-get_sentiment(tweetsAAPL.text.corpus, method = "syuzhet")
+tweetsAAPL.text.sentiment <- get_sentiment(tweetsAAPL.text, method = "syuzhet")
 
 

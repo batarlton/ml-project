@@ -19,7 +19,7 @@ library("syuzhet")
 setup_twitter_oauth("zxYRrt8ehfhkzObPHaS0ogvPH", "2NlLd6164qb5Dr7594HqTp8jGthfrRY0A4bU0uJAXcrQe8zbQu", "752704258428968960-ekoMIp6sj0Sg2AQL6zGJObVWCxqzHKy", "8fBFRwtatrp3a4axwOLYDoITI3kFjX7TbzpMXKWLTxtfq")
 
 # search will start at the "until", and end at "since"
-tweetsAAPL <- searchTwitter("AAPL", n=526, lang = "en", since='2016-07-02', until='2016-08-02')
+tweetsAAPL <- searchTwitter("AAPL", n=10, lang = "en", since='2016-07-02', until='2016-08-02')
 tweetsAAPL <- strip_retweets(tweetsAAPL)
 
 #https://www.credera.com/blog/business-intelligence/twitter-analytics-using-r-part-2-create-word-cloud/

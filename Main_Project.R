@@ -51,22 +51,9 @@ tweetsAAPL.text.corpus <- Corpus(VectorSource(tweetsAAPL.text))
 tweetsAAPL.text.corpus <- tm_map(tweetsAAPL.text.corpus, function(x)removeWords(x, stopwords()))
 #wordcloud(tweetsAAPL.text.corpus,min.freq = 2, scale=c(7,0.5),colors=brewer.pal(8, "Dark2"),  random.color= TRUE, random.order = FALSE, max.words = 150)
 
+
+
 # get sentiment of the tweets
 tweetsAAPL.text.sentiment <- get_sentiment(tweetsAAPL.text, method = "syuzhet")
-
-###Sorting negative and positive tweets###
-#get indexes
-positiveIndexes <- tweetsAAPL.text.sentiment > 0
-negativeIndexes <- tweetsAAPL.text.sentiment < 0
-
-#separate tweets
-tweetsAAPL.negativeTweets <- tweetsAAPL.text[negativeIndexes]
-tweetsAAPL.positiveTweets <- tweetsAAPL.text[positiveIndexes]
-#separate tweet sentiments
-tweetsAAPL.positiveTweets.sentiment <- tweetsAAPL.text.sentiment[positiveIndexes]
-tweetsAAPL.negativeTweets.sentiment <- tweetsAAPL.text.sentiment[negativeIndexes]
-
-
-
 
 

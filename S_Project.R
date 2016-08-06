@@ -10,11 +10,28 @@ library(quantmod)
 #        Washington, USA, 
 positives= readLines("positive-words.txt")
 negatives = readLines("negative-words.txt")
+Jan <- readLines("January2015.txt")
+Febr <- readLines("February2015.txt")
+March <- readLines("March2015.txt")
+
+
+
+getSymbols("AAPL", from = '2015-01-01', to = '2015-01-31')
+AAPLChange <- AAPL$AAPL.Close[[nrow(AAPL$AAPL.Close)]]-AAPL$AAPL.Open[[1]]
+
+blist = list()
+
+hlist <- list()
+for (h in 1:length(Jan)){
+  pos <- sum(str_count(Jan[h], positives))
+  neg <- sum(str_count(Jan[h], negatives))
+  hlist[[h]]<-c(pos,neg)
+}
+blist[[1]] <- c(Reduce("+",hlist), AAPLChange)
 
 getSymbols("AAPL", from = '2016-07-29', to = '2016-08-06')
 AAPLChange <- as.data.frame(AAPL$AAPL.Close-AAPL$AAPL.Open)
 AAPLChange$date <- as.Date(rownames(AAPLChange))
-
 
 alist = list()
 

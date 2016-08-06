@@ -11,9 +11,6 @@ library(quantmod)
 positives= readLines("positive-words.txt")
 negatives = readLines("negative-words.txt")
 
-setup_twitter_oauth("b3mFh2y716eNJszWHw8mZpaLi", "ZnIni1gLHQtqFCoPs6P8OBgvQU04fQdDkCRtI3edyioYaNv0T4", "454653060-FK01BRN85A0SF4DPjbb3XCG4N5qzxpxtnOznGQrX", "2oYjMJI648RXaoyBhr2nbDmqbXqiZyDDq6n59UWZOMWgG")
-setup_twitter_oauth("zxYRrt8ehfhkzObPHaS0ogvPH", "2NlLd6164qb5Dr7594HqTp8jGthfrRY0A4bU0uJAXcrQe8zbQu", "752704258428968960-ekoMIp6sj0Sg2AQL6zGJObVWCxqzHKy", "8fBFRwtatrp3a4axwOLYDoITI3kFjX7TbzpMXKWLTxtfq")
-
 getSymbols("AAPL", from = '2016-07-29', to = '2016-08-06')
 AAPLChange <- as.data.frame(AAPL$AAPL.Close-AAPL$AAPL.Open)
 AAPLChange$date <- as.Date(rownames(AAPLChange))

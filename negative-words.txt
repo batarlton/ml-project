@@ -4782,3 +4782,8 @@ zealous
 zealously
 zombie
 sell
+selling
+drop
+drops
+dropped
+dropping

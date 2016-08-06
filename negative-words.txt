@@ -465,8 +465,6 @@ bulkier
 bulkiness
 bulky
 bulkyness
-bull****
-bull----
 bullies
 bullshit
 bullshyt
@@ -1557,7 +1555,6 @@ extremism
 extremist
 extremists
 eyesore
-f**k
 fabricate
 fabrication
 facetious
@@ -3005,7 +3002,7 @@ nauseate
 nauseates
 nauseating
 nauseatingly
-na�ve
+na?ve
 nebulous
 nebulously
 needless
@@ -3762,7 +3759,6 @@ setbacks
 sever
 severe
 severity
-sh*t
 shabby
 shadowy
 shady
@@ -4787,3 +4783,4 @@ drop
 drops
 dropped
 dropping
+downtick

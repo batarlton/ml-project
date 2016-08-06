@@ -18,13 +18,28 @@ library("syuzhet")
 
 setup_twitter_oauth("zxYRrt8ehfhkzObPHaS0ogvPH", "2NlLd6164qb5Dr7594HqTp8jGthfrRY0A4bU0uJAXcrQe8zbQu", "752704258428968960-ekoMIp6sj0Sg2AQL6zGJObVWCxqzHKy", "8fBFRwtatrp3a4axwOLYDoITI3kFjX7TbzpMXKWLTxtfq")
 
+
 # search will start at the "until", and end at "since"
-tweetsAAPL <- searchTwitter("AAPL", n=10, lang = "en", since='2016-07-02', until='2016-08-02')
-tweetsAAPL <- strip_retweets(tweetsAAPL)
+#tweetsAAPL <- searchTwitter("AAPL", n=10, lang = "en", since='2016-07-02', until='2016-08-02')
+#tweetsAAPL <- strip_retweets(tweetsAAPL)
+
+numOfTweets <- 10 
+
+# search will start at the "until", and end at "since"
+for(i in 1:28)
+{
+  date <- paste("2016-07-", i, sep = "")
+  print(date)
+  tweetsAAPL <- sapply(searchTwitter("AAPL", n=numOfTweets, lang = "en", since=date), function(x) x$getText())
+  print(tweetsAAPL)
+  if(i == 1)
+    monthMatrix <- as.matrix(tweetsAAPL.text)
+  else
+    monthMatrix <- cbind(monthMatrix, c(tweetsAAPL.text))
+}
 
 #https://www.credera.com/blog/business-intelligence/twitter-analytics-using-r-part-2-create-word-cloud/
 #  Above website showed how to obtain tweets and remove unnecessary words/symbols
-tweetsAAPL.text <- sapply(tweetsAAPL, function(x) x$getText())
 # Replace blank space ("rt")
 tweetsAAPL.text <- gsub("rt", "", tweetsAAPL.text)
 # Replace @UserName

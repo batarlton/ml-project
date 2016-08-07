@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-
-#install.packages("twitteR", dependencies = TRUE)
-#install.packages("tm", dependencies = TRUE)
-#install.packages("qdap")
-#install.packages("quantmod", dependencies = TRUE)
-#install.packages("rminer", dependencies = TRUE)
-#install.packages("stringr", dependencies = TRUE)
-
-=======
->>>>>>> c9a939e60ab27c7f77781ed5781484cb6b02d8be
 library(twitteR)
 library(tm)
 library(qdap)

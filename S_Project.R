@@ -4,7 +4,7 @@
 #install.packages("qdap")
 #install.packages("quantmod", dependencies = TRUE)
 #install.packages("rminer", dependencies = TRUE)
-install.packages("stringr", dependencies = TRUE)
+#install.packages("stringr", dependencies = TRUE)
 
 library(twitteR)
 library(tm)

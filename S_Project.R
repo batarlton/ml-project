@@ -1,7 +1,16 @@
+
+#install.packages("twitteR", dependencies = TRUE)
+#install.packages("tm", dependencies = TRUE)
+#install.packages("qdap")
+#install.packages("quantmod", dependencies = TRUE)
+#install.packages("rminer", dependencies = TRUE)
+install.packages("stringr", dependencies = TRUE)
+
 library(twitteR)
 library(tm)
 library(qdap)
 library(quantmod)
+library(stringr)
 library(rminer)
 
 # Word lists are modified versions from Hu and Liu

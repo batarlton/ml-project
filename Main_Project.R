@@ -8,12 +8,13 @@
 #install.packages("plyr", dependencies = TRUE)
 #install.packages("neuralnet", dependencies = TRUE)
 #install.packages("e1071", dependencies = TRUE)
-
+install.packages("kernlab", dependencies = TRUE)
 
 library("syuzhet")
 library("plyr")
 library("neuralnet")
 library("e1071")
+library("kernlab")
 
 # Due to the nature of the API we were forced to change the program so we could pull more tweets and save them. 
 #  There was approx 480 api command limit and a decent amount of tweets but it had a limit too, since we were 
@@ -91,5 +92,7 @@ nn <- neuralnet(formula = tweetVSstock[,2]~tweetVSstock[,1], data = tweetVSstock
 nb <- naiveBayes(formula = tweetVSstock[,2]~tweetVSstock[,1], data = tweetVSstock)
 #not sure this is useful
 km <- kmeans(tweetVSstock, centers= 2, iter.max = 10)
+#randomforest?
+svm <- ksvm(tweetVSstock)
 
 
